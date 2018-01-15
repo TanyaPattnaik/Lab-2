@@ -1,0 +1,111 @@
+#include <iostream>
+using namespace std;
+class node{
+int data;
+node *next;
+};
+
+class List{
+private:
+node *head;
+node *tail;
+List(){
+head=NULL;
+tail=NULL;
+}
+void insert(int data){     //Adds a new element to the end of the linked list.
+node *temp=new node();     //temp pointer points to new node with data
+temp->data=data;
+temp->next=NULL;
+if(head==NULL){            //check if there exists any linked list
+head=temp;
+tail=temp;
+}
+else{
+tail->next=temp;
+tail=temp;
+}
+}
+
+void insertAt(int pos, int data){
+node *temp=new node();
+node *t1=new node();
+node *t2=new node();
+t1->data=data;
+t1->next=NULL;
+temp=head;
+for(int i=1; i<pos; i++){
+temp=temp->next;
+if(temp==NULL){cout<<"Not enough elements"
+}
+}
+t2=temp->next;
+temp->next=t1;
+t1->next=t2;
+}
+
+void deleteAt(int pos){
+ {
+  node *temp=new node();
+  node *t=new node();
+  temp=head;
+  for(int i=1;i<pos;i++)
+  {
+   temp=temp->next;
+  }
+  t=temp->next;
+  temp=head;
+  for(int i=1;i<n1-1;i++)
+  {
+   temp=temp->next;
+  }
+  temp=t;
+ }
+ void displayList()
+ {
+  if(head==NULL)
+  {
+   cout << "Nothing";
+  }
+  else
+  {
+   node *temp = head;
+   while(temp != NULL)
+   {
+    cout << temp->data;
+    cout<<" ";
+    temp = temp->next;
+   }
+  }
+ }
+};
+int main()
+{
+ int data1,data2,data3,data4,data5,d,n1,n2;
+ linkedList l;
+ cout<<"Please enter the data to be added\n";
+ cin>>data1;
+ l.addNode(data1);
+ cout<<"Please enter the data to be added\n";
+ cin>>data2;
+ l.addNode(data2);
+ cout<<"Please enter the data to be added\n";
+ cin>>data3;
+ l.addNode(data3);
+ cout<<"Please enter the data to be added\n";
+ cin>>data4;
+ l.addNode(data4);
+ cout<<"Please enter the data to be added\n";
+ cin>>data5;
+ l.addNode(data5);l.displayList();
+ cout<<"Please enter the data to be inserted\n";
+ cin>>d;
+ cout<<"The position where you want to insert it\n";
+ cin>>n1;
+ l.insertNode(d,n1);
+ l.displayList();
+ cout<<"Please enter the node which you want to delete\n";
+ cin>>n2;
+ l.deleteNode(n2);
+ l.displayList();
+}
