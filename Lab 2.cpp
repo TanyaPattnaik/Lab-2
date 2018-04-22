@@ -9,10 +9,12 @@ class List{
 private:
 node *head;
 node *tail;
+  //constructor
 List(){
 head=NULL;
 tail=NULL;
 }
+  
 void insert(int data){     //Adds a new element to the end of the linked list.
 node *temp=new node();     //temp pointer points to new node with data
 temp->data=data;
